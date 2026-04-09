@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vencien Castada – Portfolio</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: #f5f5f3;
+      color: #1a1a18;
+      line-height: 1.7;
+    }
+
+    .port {
+      max-width: 860px;
+      margin: 2.5rem auto;
+      background: #ffffff;
+      border-radius: 16px;
+      border: 1px solid #e4e2da;
+      overflow: hidden;
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 3.5rem 2rem 2.5rem;
+      border-bottom: 1px solid #e4e2da;
+      background: #fafaf8;
+    }
+    .avatar {
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      background: #B5D4F4;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 28px; font-weight: 500;
+      color: #0C447C;
+      margin: 0 auto 1.25rem;
+    }
+    .hero h1 {
+      font-size: 28px; font-weight: 500;
+      letter-spacing: 0.04em;
+      color: #1a1a18;
+    }
+    .hero .tagline {
+      font-size: 15px; color: #5f5e5a;
+      max-width: 520px; margin: 0.5rem auto 0;
+    }
+    .contact-row {
+      display: flex; flex-wrap: wrap; gap: 8px;
+      justify-content: center; margin-top: 1.25rem;
+    }
+    .chip {
+      font-size: 12px; padding: 4px 14px;
+      border-radius: 20px;
+      border: 1px solid #d3d1c7;
+      color: #5f5e5a;
+      background: #ffffff;
+      text-decoration: none;
+    }
+    .chip:hover { background: #f1efe8; }
+
+    /* Sections */
+    .section {
+      padding: 2rem 2.5rem;
+      border-bottom: 1px solid #e4e2da;
+    }
+    .section:last-child { border-bottom: none; }
+
+    .sec-label {
+      font-size: 11px; font-weight: 500;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: #185FA5; margin-bottom: 1.25rem;
+    }
+
+    /* Summary */
+    .summary-text { font-size: 15px; color: #5f5e5a; }
+
+    /* Experience */
+    .exp-item { margin-bottom: 1.75rem; }
+    .exp-item:last-child { margin-bottom: 0; }
+    .exp-header {
+      display: flex; justify-content: space-between;
+      align-items: baseline; flex-wrap: wrap; gap: 4px;
+    }
+    .exp-title { font-size: 15px; font-weight: 500; color: #1a1a18; }
+    .exp-date { font-size: 13px; color: #888780; }
+    .exp-org { font-size: 13px; color: #5f5e5a; margin: 2px 0 8px; }
+    .exp-bullets { list-style: none; padding: 0; }
+    .exp-bullets li {
+      font-size: 14px; color: #5f5e5a;
+      line-height: 1.65; padding: 2px 0 2px 16px;
+      position: relative;
+    }
+    .exp-bullets li::before {
+      content: "–"; position: absolute; left: 0;
+      color: #b4b2a9;
+    }
+
+    /* Education */
+    .edu-grid { display: grid; gap: 10px; }
+    .edu-card {
+      background: #f5f5f3;
+      border-radius: 10px;
+      padding: 12px 16px;
+    }
+    .edu-deg { font-size: 14px; font-weight: 500; color: #1a1a18; }
+    .edu-school { font-size: 13px; color: #5f5e5a; margin-top: 2px; }
+    .edu-year { font-size: 12px; color: #888780; margin-top: 2px; }
+
+    /* Skills */
+    .skills-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+    .skill-tag {
+      font-size: 13px; padding: 5px 14px;
+      border-radius: 20px;
+      border: 1px solid #d3d1c7;
+      color: #1a1a18;
+      background: #ffffff;
+    }
+
+    /* Competencies */
+    .comp-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 10px;
+    }
+    .comp-card {
+      background: #f5f5f3;
+      border-radius: 10px;
+      padding: 12px 16px;
+      font-size: 14px; color: #1a1a18;
+    }
+
+    /* Languages */
+    .lang-row { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .lang-item {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 14px; color: #1a1a18;
+    }
+    .dot {
+      width: 8px; height: 8px;
+      border-radius: 50%; background: #378ADD;
+      flex-shrink: 0;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 12px;
+      color: #b4b2a9;
+      background: #fafaf8;
+      border-top: 1px solid #e4e2da;
+    }
+
+    @media (max-width: 600px) {
+      .port { margin: 0; border-radius: 0; }
+      .section { padding: 1.5rem 1.25rem; }
+      .hero { padding: 2.5rem 1.25rem 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="port">
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="avatar">VC</div>
+    <h1>Vencien Castada</h1>
+    <p class="tagline">Fresh graduate and detail-oriented Virtual Assistant with a strong background in administrative support, task management, and operational efficiency.</p>
+    <div class="contact-row">
+      <a class="chip" href="tel:+639468819718">09468819718</a>
+      <a class="chip" href="mailto:venciencastada22@gmail.com">venciencastada22@gmail.com</a>
+      <span class="chip">Baras, Rizal, Philippines</span>
+    </div>
+  </div>
+
+  <!-- About -->
+  <div class="section">
+    <div class="sec-label">About</div>
+    <p class="summary-text">Experienced in team leadership, client communication, and utilizing digital tools for productivity. Adept at handling diverse responsibilities to meet deadlines and exceed expectations.</p>
+  </div>
+
+  <!-- Experience -->
+  <div class="section">
+    <div class="sec-label">Experience</div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <span class="exp-title">Virtual Assistant</span>
+        <span class="exp-date">2023 – 2024</span>
+      </div>
+      <div class="exp-org">Upwork</div>
+      <ul class="exp-bullets">
+        <li>Provided online research, data entry, and administrative support to clients</li>
+        <li>Managed schedules, email correspondence, and document preparation</li>
+        <li>Ensured accuracy and quality in all deliverables</li>
+      </ul>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <span class="exp-title">Assistant Manager</span>
+        <span class="exp-date">2023 – 2024</span>
+      </div>
+      <div class="exp-org">West Street Gasoline Station</div>
+      <ul class="exp-bullets">
+        <li>Supervised daily operations, staff schedules, and inventory management</li>
+        <li>Implemented process improvements that enhanced operational efficiency</li>
+        <li>Led a team to meet performance targets</li>
+      </ul>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <span class="exp-title">Pump Attendant / Cashier</span>
+        <span class="exp-date">2022 – 2023</span>
+      </div>
+      <div class="exp-org">West Street Gasoline Station</div>
+      <ul class="exp-bullets">
+        <li>Delivered excellent customer service while processing transactions</li>
+        <li>Managed fuel inventory and maintained accurate sales records</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Education -->
+  <div class="section">
+    <div class="sec-label">Education</div>
+    <div class="edu-grid">
+      <div class="edu-card">
+        <div class="edu-deg">Bachelor of Information Technology</div>
+        <div class="edu-school">ICCT Colleges</div>
+        <div class="edu-year">Graduated 2026</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-deg">Senior High School – ICT Strand</div>
+        <div class="edu-school">Gateways Institute of Science and Technology</div>
+        <div class="edu-year">2020 – 2022</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-deg">High School</div>
+        <div class="edu-school">Baras Pinugay Integrated High School</div>
+        <div class="edu-year">2016 – 2020</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-deg">Elementary Education</div>
+        <div class="edu-school">Baras Pinugay Elementary School</div>
+        <div class="edu-year">2010 – 2016</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Skills -->
+  <div class="section">
+    <div class="sec-label">Skills</div>
+    <div class="skills-grid">
+      <span class="skill-tag">Online Research</span>
+      <span class="skill-tag">Data Entry & Accuracy</span>
+      <span class="skill-tag">Google Spreadsheet</span>
+      <span class="skill-tag">Microsoft Excel</span>
+      <span class="skill-tag">Microsoft Word</span>
+      <span class="skill-tag">High-Speed Typing</span>
+      <span class="skill-tag">Copywriting & Proofreading</span>
+      <span class="skill-tag">Basic PC & Laptop Troubleshooting</span>
+      <span class="skill-tag">PC Building</span>
+    </div>
+  </div>
+
+  <!-- Core Competencies -->
+  <div class="section">
+    <div class="sec-label">Core Competencies</div>
+    <div class="comp-grid">
+      <div class="comp-card">Management Skills</div>
+      <div class="comp-card">Creativity</div>
+      <div class="comp-card">Negotiation</div>
+      <div class="comp-card">Critical Thinking</div>
+      <div class="comp-card">Leadership</div>
+    </div>
+  </div>
+
+  <!-- Languages -->
+  <div class="section">
+    <div class="sec-label">Languages</div>
+    <div class="lang-row">
+      <div class="lang-item"><div class="dot"></div> English (Fluent)</div>
+      <div class="lang-item"><div class="dot"></div> Filipino (Fluent)</div>
+    </div>
+  </div>
+
+  <div class="footer">© 2024 Vencien Castada · venciencastada22@gmail.com</div>
+
+</div>
+
+</body>
+</html>
